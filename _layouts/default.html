@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ site.title }}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/ie8.css"/><![endif]-->
+
+</head>
+
+<body id="top">
+
+<header id="header">
+    <div class="inner">
+        <a href="/" class="image avatar"><img src="/images/avatar.jpg" alt=""/></a>
+        {{site.hometext}}
+    </div>
+</header>
+
+
+{{ content }}
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <ul class="icons">
+
+            {% if site.github_username %}
+            <li>
+                <a href="https://github.com/{{ site.github_username }}" target="new" class="icon fa-github">
+                    <span class="label">GitHub</span>
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.twitter_username %}
+            <li>
+                <a href="https://twitter.com/{{ site.twitter_username }}" target="new" class="icon fa-twitter">
+                    <span class="label">Twitter</span>
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.linkedin_username %}
+            <li>
+                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="new" class="icon fa-linkedin">
+                    <span class="label">LinkedIn</span>
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.google_plus_username %}
+            <li>
+                <a href="https://plus.google.com/{{ site.google_plus_username }}" target="new"
+                   class="icon fa-google-plus">
+                    <span class="label">Google+</span>
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.facebook_username %}
+            <li>
+                <a href="https://www.facebook.com/{{ site.facebook_username }}" target="new" class="icon fa-facebook">
+                    <span class="label">Facebook</span>
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.dribbble_username %}
+            <li>
+                <a href="#" target="new" class="icon fa-dribbble">
+                    <span class="label">Dribbble</span>
+                </a>
+            </li>
+            {% endif %}
+
+            {% if site.email %}
+            <li>
+                <a href="mailto:{{ site.email }}" class="icon fa-envelope-o">
+                    <span class="label">Email</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+        <ul class="copyright">
+            <li>{{ 'now' | date: "%Y" }} &copy; {{ site.author }}</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+
+        </ul>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.poptrox.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="/js/ie/respond.min.js"></script><![endif]-->
+<script src="/js/main.js"></script>
+
+</body>
+</html>
