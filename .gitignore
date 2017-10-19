@@ -1,7 +1,6 @@
 _site
 .sass-cache
 .jekyll-metadata
-public/
 node_modules
 .idea/
 
