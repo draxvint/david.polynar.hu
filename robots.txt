@@ -7,3 +7,5 @@ Disallow: /package-lock.js
 
 User-agent: *
 Disallow: /
+
+sitemap: https://polynar.github.io/sitemap.xml
