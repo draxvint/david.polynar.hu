@@ -1,0 +1,9 @@
+User-agent: Google
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /js/
+Disallow: /package-lock.js
+
+User-agent: *
+Disallow: /
