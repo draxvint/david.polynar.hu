@@ -10,7 +10,8 @@
 
         gtag('config', 'UA-108378388-1');
     </script>
-    <title>{{ site.title }}</title>
+    <title>{% if page.title %}{{page.title}} - {% endif %}{{ site.title }}</title>
+    {% feed_meta %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="description" content="{{ site.description }}"/>
     <meta name="keywords" content="code, html, css, js, vue, laravel, blog, magyar, hungary, ttik, proginfo, hallgato, javascript, portfolio, Dávid, Polynár, leírás, video, gif, "/>
@@ -89,6 +90,9 @@
                 </a>
             </li>
             {% endif %}
+
+            <li><a href="/feed.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a>
+            </li>
 
             {% if site.email %}
             <li>

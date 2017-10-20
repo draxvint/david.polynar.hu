@@ -1,6 +1,6 @@
 # Site settings
 encoding: utf-8
-title: David Polynar # Title of your site
+title: David Polynar vs. the World # Title of your site
 email: polynar.david@gmail.com
 author: David Polynar # Your contant email
 hometext: <h1><strong><a  href="/about.html">David Polynar</a></strong> vs. the World<br> </h1>
@@ -24,7 +24,7 @@ exclude: ["node_modules","gulpfile.js","package.json","Gemfile","Gemfile.lock","
 # Build settings
 markdown: kramdown
 
-
 plugins:
   - jekyll-coffeescript
   - jekyll-sitemap
+  - jekyll-feed
