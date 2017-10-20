@@ -3,7 +3,7 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
-var cleanCSS = require('gulp-clean-css')
+var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
@@ -49,7 +49,7 @@ gulp.task('sass', function () {
         }))
         .pipe(cleanCSS())
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        // .pipe(concat('style.min.css'))
+        //.pipe(concat('style.min.css'))
         .pipe(gulp.dest('_site/css'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('css'));

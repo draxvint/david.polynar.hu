@@ -5,18 +5,18 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp",
-    "build": "gulp build"
+    "build": "gulp jekyll-build"
   },
   "author": "David Polynar",
   "license": "",
   "devDependencies": {
-    "browser-sync": "^1.9.2",
+    "browser-sync": "^2.18.13",
     "browsersync": "0.0.1-security",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^1.0.0",
-    "gulp-clean-css": "^2.4.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^3.1.0"
   },
   "repository": {
     "type": "git",
