@@ -3,6 +3,8 @@ layout: post
 title: Hogyan írjunk blogot?
 date: 2017-10-19
 categories: general update
+comments: true
+meta: "Notes On Design Series"
 ---
 ## Előszó
 Ha valaki azt mondta volna nekem pár éve vagy akár hónapja, hogy Dávid te blogot fogsz írni, jól kinevettem volna, el se tudtam képzelni ezt és most tessék jelenleg az első blog bejegyzésemet írom, ami egyrészt fura másrészt egy pozitív érzés.

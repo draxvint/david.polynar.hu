@@ -9,7 +9,10 @@ layout: default
         {% for post in site.posts limit:1 %}
             <header class="major">
                 <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+                <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if site.author %} • {{ site.author }}{%
+                    endif %}{% if post.comments %} • <span class="disqus-comment-count"
+                                                           data-disqus-identifier="{{post.id}}">0 Comments</span>{%
+                    endif %}</p>
             </header>
 
             <section>
