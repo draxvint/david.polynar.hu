@@ -6,8 +6,9 @@ categories: general update
 comments: true
 meta: "Notes On Design Series"
 ---
-## Előszó
+<img src="/images/fulls/07.jpg" class="fit image">
 Ha valaki azt mondta volna nekem pár éve vagy akár hónapja, hogy Dávid te blogot fogsz írni, jól kinevettem volna, el se tudtam képzelni ezt és most tessék jelenleg az első blog bejegyzésemet írom, ami egyrészt fura másrészt egy pozitív érzés.
+
 ## Az ötlet
 Az ötlet úgy jött, hogy nagyon megtetszettek a statikus site generátorok jelen esetben a [Jekyll](https://jekyllrb.com/) (tervezek róla írni) ről van szó. Kitűztem célúl hogy csinálok egy erre épülő oldalt, egyik ötletem követte a másikat: ez lehetne a bemutatkozó oldalam is, -de így olyan üres milyen tartalommal kellene megtölteni?- jött a kérdés, már régóta gondolkodtam rajta, de jó lenne megosztani a többi emberrel azokat amiket csinálok hátha valaki kedvet kap hozzá, így jutottam el idáig.
 ## Mi várható?

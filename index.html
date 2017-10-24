@@ -16,8 +16,13 @@ layout: default
             </header>
 
             <section>
-                {{ post.content }}
+                {{ post.excerpt }}
             </section>
+        <footer>
+            <ul class="actions">
+                <li><a href="{{ post.url }}" class="button">Tovább</a></li>
+            </ul>
+        </footer>
         {% endfor %}
     </section>
 

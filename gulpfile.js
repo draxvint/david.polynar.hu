@@ -6,7 +6,6 @@ var cp          = require('child_process');
 var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
 
-var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
@@ -16,7 +15,13 @@ var messages = {
  */
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+gulp.task('jekyll-build-drafts', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn('jekyll', ['build', '--drafts'], {stdio: 'inherit'})
         .on('close', done);
 });
 
@@ -62,7 +67,7 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('_sass/**/*.scss', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_drafts/*'], ['jekyll-rebuild']);
     gulp.watch(['*.js', 'js/*.js'], ['jekyll-rebuild']);
     gulp.watch(['_config.yml'], ['jekyll-rebuild']);
 });

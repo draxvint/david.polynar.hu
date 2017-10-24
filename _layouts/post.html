@@ -7,15 +7,16 @@ layout: default
         <header class="major">
             <h2 class="post-title">{{ page.title }}</h2>
             <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if site.author %} • {{ site.author }}{% endif
-                %}{% if page.comments %} • <span class="disqus-comment-count" data-disqus-identifier="{{page.id}}">0 Comments</span>{%
+                %}{% if page.comments %} • <span class="disqus-comment-count" data-disqus-identifier="{{page.id}}">N Comments</span>{%
                 endif %}</p>
         </header>
 
         <section>
             {{ content }}
-
         </section>
-
+        {% if page.unsplash %}
+        <footer id="post-footer"> Photo by {{page.unsplash}}</footer>
+        {% endif %}
         {% if page.comments %}
         <div id="disqus_thread"></div>
         <script>
