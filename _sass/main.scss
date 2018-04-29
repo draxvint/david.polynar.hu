@@ -166,8 +166,7 @@
 	}
 
 	code {
-		//background: _palette(border-bg);
-
+      background: _palette(border-bg);
 		font-family: _font(family-fixed);
 		font-size: 0.9em;
 		margin: 0 0.25em;
@@ -175,6 +174,7 @@
 	}
 
 	pre {
+      background: _palette(border-bg);
 		border-radius: _size(border-radius);
 		border: solid 2px _palette(border);
 		-webkit-overflow-scrolling: touch;

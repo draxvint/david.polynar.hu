@@ -10,13 +10,13 @@
   "author": "David Polynar",
   "license": "",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.24.0",
     "browsersync": "0.0.1-security",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.9.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.2.1"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,7 @@
     "url": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync/issues"
   },
   "homepage": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync",
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^6.0.0"
+  }
 }

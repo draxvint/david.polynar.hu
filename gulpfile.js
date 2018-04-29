@@ -31,11 +31,21 @@ gulp.task('jekyll-build-drafts', function (done) {
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
-
+gulp.task('jekyll-rebuild-drafts', ['jekyll-build-drafts'], function () {
+    browserSync.reload();
+});
 /**
  * Wait for jekyll-build, then launch the Server
  */
 gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+    browserSync.init({
+        server: {
+            baseDir: '_site/'
+        }
+    });
+});
+
+gulp.task('browser-sync-drafts', ['sass', 'jekyll-build-drafts'], function () {
     browserSync.init({
         server: {
             baseDir: '_site/'
@@ -67,9 +77,16 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('_sass/**/*.scss', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_drafts/*'], ['jekyll-rebuild']);
+    gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
     gulp.watch(['*.js', 'js/*.js'], ['jekyll-rebuild']);
     gulp.watch(['_config.yml'], ['jekyll-rebuild']);
+});
+
+gulp.task('watch-drafts', function () {
+    gulp.watch('_sass/**/*.scss', ['sass']);
+    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_drafts/*'], ['jekyll-rebuild-drafts']);
+    gulp.watch(['*.js', 'js/*.js'], ['jekyll-rebuild-drafts']);
+    gulp.watch(['_config.yml'], ['jekyll-rebuild-drafts']);
 });
 
 /**
@@ -77,3 +94,5 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+gulp.task('drafts', ['browser-sync-drafts', 'watch-drafts']);

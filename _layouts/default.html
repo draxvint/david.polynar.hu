@@ -14,7 +14,8 @@
     {% feed_meta %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="description" content="{{ site.description }}"/>
-    <meta name="keywords" content="code, html, css, js, vue, laravel, blog, magyar, hungary, ttik, proginfo, hallgato, javascript, portfolio, Dávid, Polynár, leírás, video, gif, "/>
+    <meta name="keywords"
+          content="code, html, css, js, vue, laravel, blog, magyar, hungary, ttik, proginfo, hallgato, javascript, portfolio, Dávid, Polynár, leírás, video, gif, jekyll"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="David Polynar">
     <link rel="stylesheet" href="/css/main.css"/>
@@ -31,6 +32,10 @@
     <div class="inner">
         <a href="/" class="image avatar"><img src="/images/avatar.jpg" alt=""/></a>
         {{site.hometext}}
+        <!-- <ul class="sidenav">
+            <li><a  href="/"></i>Blog</a></li>
+            <li><a  href="/about.html"></i>Rólam</a></li>
+        </ul> -->
     </div>
 </header>
 
@@ -62,15 +67,6 @@
             <li>
                 <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="new" class="icon fa-linkedin">
                     <span class="label">LinkedIn</span>
-                </a>
-            </li>
-            {% endif %}
-
-            {% if site.google_plus_username %}
-            <li>
-                <a href="https://plus.google.com/{{ site.google_plus_username }}" target="new"
-                   class="icon fa-google-plus">
-                    <span class="label">Google+</span>
                 </a>
             </li>
             {% endif %}

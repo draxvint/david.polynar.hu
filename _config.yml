@@ -3,7 +3,7 @@ encoding: utf-8
 title: David Polynar vs. the World # Title of your site
 email: polynar.david@gmail.com
 author: David Polynar # Your contant email
-hometext: <h1><strong><a  href="/about.html">David Polynar</a></strong> vs. the World<br> </h1>
+hometext: <h1><strong>David Polynar</strong> vs. the World<br> </h1>
 description: > # this means to ignore newlines until "baseurl:"
   Polynár Dávid vagyok proginfo hallgato az SZTE-en és ez itt az én weboldalam,
   ahol mindenféle érdekes dologról fogok írni.
