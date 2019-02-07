@@ -28,31 +28,12 @@ gulp.task('jekyll-build-drafts', function (done) {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', gulp.series('jekyll-build', function () {
     browserSync.reload();
-});
-gulp.task('jekyll-rebuild-drafts', ['jekyll-build-drafts'], function () {
+}));
+gulp.task('jekyll-rebuild-drafts', gulp.series('jekyll-build-drafts', function () {
     browserSync.reload();
-});
-/**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
-    browserSync.init({
-        server: {
-            baseDir: '_site/'
-        }
-    });
-});
-
-gulp.task('browser-sync-drafts', ['sass', 'jekyll-build-drafts'], function () {
-    browserSync.init({
-        server: {
-            baseDir: '_site/'
-        }
-    });
-});
-
+}));
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
@@ -68,8 +49,27 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('_site/css'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('css'));
-        
+
 });
+
+/**
+ * Wait for jekyll-build, then launch the Server
+ */
+gulp.task('browser-sync', gulp.series('sass', 'jekyll-build', function() {
+    browserSync.init({
+        server: {
+            baseDir: '_site/'
+        }
+    });
+}));
+
+gulp.task('browser-sync-drafts', gulp.series('sass', 'jekyll-build-drafts', function () {
+    browserSync.init({
+        server: {
+            baseDir: '_site/'
+        }
+    });
+}));
 
 /**
  * Watch scss files for changes & recompile
@@ -93,6 +93,6 @@ gulp.task('watch-drafts', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', gulp.series('browser-sync', 'watch'));
 
-gulp.task('drafts', ['browser-sync-drafts', 'watch-drafts']);
+gulp.task('drafts', gulp.series('browser-sync-drafts', 'watch-drafts'));
