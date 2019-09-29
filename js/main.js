@@ -134,11 +134,12 @@
 
 })(jQuery);
 
-// function myFunction() {
-//     var x = document.getElementById("headerNav");
-//     if (x.className === "topnav") {
-//         x.className += " responsive";
-//     } else {
-//         x.className = "topnav";
-//     }
-// }
+/* Open */
+function openNav() {
+	document.getElementById("overlay-nav").style.display = "block";
+}
+
+/* Close */
+function closeNav() {
+	document.getElementById("overlay-nav").style.display = "none";
+}

@@ -1,12 +1,13 @@
 # Site settings
 encoding: utf-8
-title: David Polynar vs. the World # Title of your site
-email: polynar.david@gmail.com
-author: David Polynar # Your contant email
-hometext: <h1><strong>David Polynar</strong> vs. the World<br> </h1>
+title: Polynár Dávid # Title of your site
+email: david@polynar.hu
+author: Polynár Dávid # Your contant email
+hometext: >
+  <h1>Hi, I'm <strong>David Polynár</strong></h1>I'm a Web Developer and Programmer based in Szeged, Hungary.
+
 description: > # this means to ignore newlines until "baseurl:"
-  Polynár Dávid vagyok proginfo hallgato az SZTE-en és ez itt az én weboldalam,
-  ahol mindenféle érdekes dologról fogok írni.
+  Polynár Dávid vagyok Programtervező Informatikus hallgató az SZTE-en és ez itt az én weboldalam.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://polynar.github.io" # the base hostname & protocol for your site
 
@@ -14,11 +15,11 @@ url: "https://polynar.github.io" # the base hostname & protocol for your site
 # Replace the word 'example' with your username if you want to include the icon in the left sidebar
 # Delete the word 'example' if you don't want to include the icon in the left sidebar
 
-twitter_username:     davidpolynar  # Replace this with your Twitter username
+#twitter_username: davidpolynar  # Replace this with your Twitter username
 github_username: polynar       # Replace this with your GitHub username
 linkedin_username: davidpolynar     # Replace this with your LinkedIn username
 google_plus_username: +PolynárDávid  # Replace this with your Google+ username
-#facebook_username:      # Replace this with your Facebook username
+facebook_username: davidpolynar     # Replace this with your Facebook username
 #dribbble_username:      # Replace this with your Dribbble username
 exclude: ["node_modules","gulpfile.js","package.json","Gemfile","Gemfile.lock","yarn.lock","package-lock.json","_sass"]
 # Build settings

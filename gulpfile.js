@@ -28,16 +28,18 @@ gulp.task('jekyll-build-drafts', function (done) {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', gulp.series('jekyll-build', function () {
+gulp.task('jekyll-rebuild', gulp.series('jekyll-build', function (done) {
     browserSync.reload();
+    done();
 }));
-gulp.task('jekyll-rebuild-drafts', gulp.series('jekyll-build-drafts', function () {
+gulp.task('jekyll-rebuild-drafts', gulp.series('jekyll-build-drafts', function (done) {
     browserSync.reload();
+    done();
 }));
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
-gulp.task('sass', function () {
+gulp.task('sass', function (done) {
     return gulp.src('_sass/**/*.scss')
         .pipe(sass({
             includePaths: ['css'],
@@ -49,26 +51,29 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('_site/css'))
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('css'));
+    done();
 
 });
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', gulp.series('sass', 'jekyll-build', function() {
+gulp.task('browser-sync', gulp.series('sass', 'jekyll-build', function(done) {
     browserSync.init({
         server: {
             baseDir: '_site/'
         }
     });
+    done();
 }));
 
-gulp.task('browser-sync-drafts', gulp.series('sass', 'jekyll-build-drafts', function () {
+gulp.task('browser-sync-drafts', gulp.series('sass', 'jekyll-build-drafts', function (done) {
     browserSync.init({
         server: {
             baseDir: '_site/'
         }
     });
+    done();
 }));
 
 /**
@@ -76,23 +81,25 @@ gulp.task('browser-sync-drafts', gulp.series('sass', 'jekyll-build-drafts', func
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('_sass/**/*.scss', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
-    gulp.watch(['*.js', 'js/*.js'], ['jekyll-rebuild']);
-    gulp.watch(['_config.yml'], ['jekyll-rebuild']);
+    gulp.watch('_sass/**/*.scss', gulp.series('sass'));
+    gulp.watch(['*.html', '_layouts/**/*.html', '_posts/*'], gulp.series('jekyll-rebuild'));
+    gulp.watch(['*.js', 'js/*.js'], gulp.series('jekyll-rebuild'));
+    gulp.watch(['_config.yml'], gulp.series('jekyll-rebuild'));
+    gulp.watch(['images/*'], gulp.series('jekyll-rebuild'));
 });
 
 gulp.task('watch-drafts', function () {
-    gulp.watch('_sass/**/*.scss', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_drafts/*'], ['jekyll-rebuild-drafts']);
-    gulp.watch(['*.js', 'js/*.js'], ['jekyll-rebuild-drafts']);
-    gulp.watch(['_config.yml'], ['jekyll-rebuild-drafts']);
+    gulp.watch('_sass/**/*.scss', gulp.series('sass'));
+    gulp.watch(['*.html', '_layouts/**/*.html', '_posts/*', '_drafts/*'], gulp.series('jekyll-rebuild-drafts'));
+    gulp.watch(['*.js', 'js/*.js'], gulp.series('jekyll-rebuild-drafts'));
+    gulp.watch(['_config.yml'], gulp.series('jekyll-rebuild-drafts'));
+    gulp.watch(['images/*'], gulp.series('jekyll-rebuild-drafts'));
 });
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', gulp.series('browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('browser-sync', 'watch'));
 
-gulp.task('drafts', gulp.series('browser-sync-drafts', 'watch-drafts'));
+gulp.task('drafts', gulp.parallel('browser-sync-drafts', 'watch-drafts'));

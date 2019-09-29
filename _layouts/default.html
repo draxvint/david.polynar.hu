@@ -29,13 +29,10 @@
 <body id="top">
 
 <header id="header">
+    <a id="open-nav-button" href="javascript:void(0)" onclick="openNav()">&#9776;</a>
     <div class="inner">
         <a href="/" class="image avatar"><img src="/images/avatar.jpg" alt=""/></a>
         {{site.hometext}}
-        <!-- <ul class="sidenav">
-            <li><a  href="/"></i>Blog</a></li>
-            <li><a  href="/about.html"></i>Rólam</a></li>
-        </ul> -->
     </div>
 </header>
 
@@ -105,6 +102,21 @@
         </ul>
     </div>
 </footer>
+
+<!-- The overlay -->
+<div id="overlay-nav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <a  href="/"></i>Blog</a>
+        <a  href="/portfolio.html"></i>Portfolió</a>
+        <a  href="/about.html"></i>Rólam</a>
+    </div>
+
+</div>
 
 <!-- Scripts -->
 <script src="/js/jquery.min.js"></script>

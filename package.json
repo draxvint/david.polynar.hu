@@ -1,5 +1,5 @@
 {
-  "name": "David-Polynar's-Blog",
+  "name": "David-Polynar",
   "version": "0.0.0",
   "description": "A starter project including full setup for Jekyll, GulpJS, SASS & BrowserSync",
   "main": "gulpfile.js",
@@ -10,10 +10,10 @@
   "author": "David Polynar",
   "license": "",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "browsersync": "0.0.1-security",
-    "gulp": "^4.0.1",
-    "gulp-autoprefixer": "^6.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2"
@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync",
   "dependencies": {
-    "npm": "^6.9.0"
+    "npm": "^6.11.3"
   }
 }
