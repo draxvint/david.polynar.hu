@@ -10,7 +10,7 @@ permalink: portfolio.html
         {% for work in site.works %}
         <article class="6u 12u$(xsmall) work-item">
             <a href="{{ work.url }}" class="image fit thumb"><img src="{{ work.img-url }}" alt="" /></a>
-            <h3>{{ work.title }}</h3>
+            <h3><a href="{{ work.url }}">{{ work.title }}</a></h3>
             <p>{{ work.description }}</p>
         </article>
         {% endfor %}

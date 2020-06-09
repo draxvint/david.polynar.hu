@@ -4,10 +4,10 @@ title: David Polynar # Title of your site
 email: david@polynar.hu
 author: David Polynar # Your contant email
 hometext: >
-  <h1>Hi, I'm <strong>David Polynár</strong></h1>I'm a Web Developer and Programmer based in Szeged, Hungary.
+  <h1>Hi, I'm <strong>David Polynar</strong></h1>I'm a Web Developer and Programmer based in Szeged, Hungary.
 
 description: > # this means to ignore newlines until "baseurl:"
-  Hi, I'm David Polynár. I'm a Web Developer and Programmer based in Szeged, Hungary.
+  Hi, I'm David Polynar. I'm a Web Developer and Programmer based in Szeged, Hungary.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://polynar.github.io" # the base hostname & protocol for your site
 
