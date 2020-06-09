@@ -30,3 +30,8 @@ plugins:
   - jekyll-coffeescript
   - jekyll-sitemap
   - jekyll-feed
+
+collections_dir: collections
+collections:
+  works:
+    output: true

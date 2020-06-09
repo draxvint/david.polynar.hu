@@ -82,18 +82,16 @@ gulp.task('browser-sync-drafts', gulp.series('sass', 'jekyll-build-drafts', func
  */
 gulp.task('watch', function () {
     gulp.watch('_sass/**/*.scss', gulp.series('sass'));
-    gulp.watch(['*.html', '_layouts/**/*.html', '_posts/*'], gulp.series('jekyll-rebuild'));
+    gulp.watch(['*.html', '_layouts/**/*.html', 'collections/**/*'], gulp.series('jekyll-rebuild'));
     gulp.watch(['*.js', 'js/*.js'], gulp.series('jekyll-rebuild'));
     gulp.watch(['_config.yml'], gulp.series('jekyll-rebuild'));
-    gulp.watch(['images/*'], gulp.series('jekyll-rebuild'));
 });
 
 gulp.task('watch-drafts', function () {
     gulp.watch('_sass/**/*.scss', gulp.series('sass'));
-    gulp.watch(['*.html', '_layouts/**/*.html', '_posts/*', '_drafts/*'], gulp.series('jekyll-rebuild-drafts'));
+    gulp.watch(['*.html', '_layouts/**/*.html', 'collections/**/*', '_drafts/*'], gulp.series('jekyll-rebuild-drafts'));
     gulp.watch(['*.js', 'js/*.js'], gulp.series('jekyll-rebuild-drafts'));
     gulp.watch(['_config.yml'], gulp.series('jekyll-rebuild-drafts'));
-    gulp.watch(['images/*'], gulp.series('jekyll-rebuild-drafts'));
 });
 
 /**

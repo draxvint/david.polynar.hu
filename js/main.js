@@ -143,3 +143,5 @@ function openNav() {
 function closeNav() {
 	document.getElementById("overlay-nav").style.display = "none";
 }
+
+document.getElementById('years').innerHTML = new Date().getFullYear();

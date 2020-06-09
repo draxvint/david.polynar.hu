@@ -452,7 +452,7 @@
 		display: inline-block;
 		position: relative;
 
-		&:before {
+		&:hover:before {
 			@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
 			background: url('images/overlay.png');
 			border-radius: _size(border-radius);

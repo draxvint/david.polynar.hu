@@ -3,4 +3,4 @@ _site
 .jekyll-metadata
 node_modules
 .idea/
-/_drafts/
+/collections/_drafts/
